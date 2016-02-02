@@ -1,0 +1,20 @@
+%h1 Cosmetic
+
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Brand
+    %th Cosmetic type
+    %th Price
+    %th Ex. date
+    %th Actions
+  - @cosmetics.each do |cosmetic|
+    %tr
+      %td= cosmetic.name
+      %td= cosmetic.brand
+      %td= cosmetic.cosmetic_type
+      %td= cosmetic.price
+      %td= cosmetic.expiration_date
+      %td= link_to 'Show', cosmetic_path(cosmetic.id)
+
+= link_to 'Back', root_path

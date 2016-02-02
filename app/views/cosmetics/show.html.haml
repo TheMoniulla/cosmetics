@@ -1,0 +1,33 @@
+%h1
+  = @cosmetic.name
+
+%p
+  %b Brand:
+  = @cosmetic.brand
+
+%p
+  %b Cosmetic type:
+  = @cosmetic.cosmetic_type
+
+%p
+  %b Price:
+  = @cosmetic.price
+
+%p
+  %b Expiration date:
+  = @cosmetic.expiration_date
+
+= link_to 'Back to list', cosmetics_path, class: 'btn btn-info'
+
+%p
+  %b Comments:
+  - @comments.each do |comment|
+    %div
+      %div
+        %b= comment.user
+        at
+        %b= comment.created_at_for_display
+        wrote:
+      %div= comment.body
+
+= link_to 'New comment', new_cosmetic_comment_path(@cosmetic), class: 'btn btn-success'

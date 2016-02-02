@@ -1,0 +1,31 @@
+%h1
+  = @cosmetic.name
+
+%p
+  %b Brand:
+  = @cosmetic.brand
+
+%p
+  %b Cosmetic type:
+  = @cosmetic.cosmetic_type
+
+%p
+  %b Price:
+  = @cosmetic.price
+
+%p
+  %b Expiration date:
+  = @cosmetic.expiration_date
+
+
+%p
+  %b Comments:
+  - @comments.each do |comment|
+    %div
+      %div
+        %b= comment.user
+        at
+        %b= comment.created_at_for_display
+        wrote:
+      %div= comment.body
+
